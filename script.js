@@ -1,41 +1,35 @@
 "use strict";
 
-let number = 10;
-//замыкания (сама функция, вместе с тем что ей доступно)
-function showMessage(text) {
-    console.log(text);
-    //let number = 20;
-    console.log(number);
+function server(){
+    setTimeout(function(){
+        console.log(1);
+    },1000)
 }
-
-showMessage("Hello!!!");
-console.log(number);
-
-const server = function(){
-    console.log('server start...');
-};
+function foo(){
+            console.log(2);
+   }
 
 server();
+foo();   
 
-const calc = (x, y) => x+y;
-// const calc = (x, y) => {
-//     return x+y
-// };
+function serverNew(host, callback){
+    console.log(`Server ${host} is starting...`);
+    callback();
+}
 
-//const calc = x => x+10;
+// serverNew('MyServer', function(){
+//     console.log('connect success!');
+// });
 
-console.log(calc(10,5));
+function done(){
+    console.log('connect success!');
+}
+
+serverNew('MyServer', done);
 
 /*
 Задание 
-Реализовать пример стрелочной функции
-Функция должна выдать приветсвие и после приветствия выдать число π
+Реализовать свой пример call-back функции 
+сохранить в Github
 
 */
-
-const hello = () => {
-    console.log('hi!!!');
-    return Math.PI;
-};
-
-console.log(hello());
