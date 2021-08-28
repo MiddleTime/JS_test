@@ -25,3 +25,17 @@ const calc = (x, y) => x+y;
 //const calc = x => x+10;
 
 console.log(calc(10,5));
+
+/*
+Задание 
+Реализовать пример стрелочной функции
+Функция должна выдать приветсвие и после приветствия выдать число π
+
+*/
+
+const hello = () => {
+    console.log('hi!!!');
+    return Math.PI;
+};
+
+console.log(hello());
